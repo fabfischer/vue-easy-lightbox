@@ -102,6 +102,10 @@
   export default {
     name: 'vue-easy-lightbox',
     props: {
+      allowDragging: {
+        type: Boolean,
+        default: true
+      },
       imgs: {
         type: [Array, String]
       },
@@ -145,7 +149,7 @@
       },
       handleMouseMove (e) {
         if (!this.checkBtn(e.button)) return
-        if (this.isDraging) {
+        if (this.isDraging && this.allowDragging) {
           this.top = this.top - this.lastY + e.clientY
           this.left = this.left - this.lastX + e.clientX
           this.lastX = e.clientX
