@@ -7,7 +7,7 @@
     >
       <div
         class="img-wrapper"
-        :class="{transition: imgTransitionStatus}"
+        :class="{transition: imgTransitionStatus, dragable: allowDragging}"
         :style="imgStyle"
       >
         <img
@@ -274,10 +274,12 @@
     left: 50%;
     transform: translate(-50% -50%);
     box-shadow: #555 0px 5px 20px 2px;
-    cursor: move;
   }
   .img-wrapper.transition {
     transition: transform 0.3s ease-in-out;
+  }
+  .img-wrapper.dragable {
+    cursor: move;
   }
   .img {
     max-width: 80vw;
