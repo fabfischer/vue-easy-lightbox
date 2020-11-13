@@ -19,6 +19,10 @@
           @mouseup="handleMouseUp($event)"
           @mousemove="handleMouseMove($event)"
         >
+
+        <div v-if="titleInformation" class="title vue-easy-lightbox-title">
+            {{ titleInformation }}
+        </div>
       </div>
 
       <!-- btns -->
@@ -211,7 +215,14 @@
         }
       },
       visibleImgSrc () {
-        return this.imgList[this.imgIndex]
+        return this.imgList[this.imgIndex].src
+              ? this.imgList[this.imgIndex].src
+              : this.imgList[this.imgIndex]
+      },
+      titleInformation () {
+        return this.imgList[this.imgIndex].title
+              ? this.imgList[this.imgIndex].title
+              : this.imgList[this.imgIndex]
       },
       imgTotal () {
         return this.imgList.length || 0
