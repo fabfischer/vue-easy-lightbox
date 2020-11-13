@@ -222,7 +222,7 @@
       titleInformation () {
         return this.imgList[this.imgIndex].title
               ? this.imgList[this.imgIndex].title
-              : this.imgList[this.imgIndex]
+              : null
       },
       imgTotal () {
         return this.imgList.length || 0
