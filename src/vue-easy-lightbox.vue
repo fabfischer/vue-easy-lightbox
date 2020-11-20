@@ -20,8 +20,9 @@
           @mousemove="handleMouseMove($event)"
         >
 
-        <div v-if="titleInformation" class="title vue-easy-lightbox-title">
-            {{ titleInformation }}
+        <div v-if="titleInformation || copyrightInformation" class="title">
+            <span v-if="titleInformation" class="title vue-easy-lightbox-title">{{ titleInformation }}</span>
+            <span v-if="copyrightInformation" class="copyright vue-easy-lightbox-copyright">{{ copyrightInformation }}</span>
         </div>
       </div>
 
@@ -220,8 +221,13 @@
               : this.imgList[this.imgIndex]
       },
       titleInformation () {
-        return this.imgList[this.imgIndex].title
-              ? this.imgList[this.imgIndex].title
+        return this.imgList[this.imgIndex].subline
+              ? this.imgList[this.imgIndex].subline
+              : null
+      },
+      copyrightInformation () {
+        return this.imgList[this.imgIndex].copyright
+              ? this.imgList[this.imgIndex].copyright
               : null
       },
       imgTotal () {
