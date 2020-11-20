@@ -23,7 +23,7 @@
         <div v-if="titleInformation || copyrightInformation"
           class="title"
           :class="{'has-title': titleInformation, 'has-copyright': copyrightInformation}"
-        >'
+        >
             <span v-if="titleInformation" class="title vue-easy-lightbox-title">{{ titleInformation }}</span>
             <span v-if="copyrightInformation" class="copyright vue-easy-lightbox-copyright">{{ copyrightInformation }}</span>
         </div>
